@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,3 +20,5 @@ Route::get('/', function () {
         'message' => 'Welcome to systock challenge api'
     ]);
 });
+
+Route::apiResource('/api/v1/users', UserController::class);
