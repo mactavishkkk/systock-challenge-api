@@ -28,18 +28,47 @@ cd systock-challenge-api
 
 3. Você precisará do arquivo `.env` em seu diretório raiz, basta renomear o `.env.example` para o mesmo ou criar um novo:
 
-4. Entre no diretório `laradock` e crie outro arquivo: `laradock/.env` a partir do arquivo `laradock/.env.example`
+4. Você precisará também baixar os submodulos do projeto, no terminal entre:
+```bash
+git submodule update --init
+```
 
-5. Agora construa as imagens para os ambientes com docker, no terminal use:
+5. Entre no diretório `laradock` e crie outro arquivo: `laradock/.env` a partir do arquivo `laradock/.env.example`
+
+6. Agora construa as imagens para os ambientes com docker, no terminal use:
 
 ```bash
 docker compose up -d nginx postgres
 ```
 
-6. Pronto, agora você já poderá acessar a rota de boas vindas em seu navegador:
+7. Com todos os containers de pé, vamos rechear nosso banco de dados, primeiro, procure pelo container com o nome de `workspace` (exemplo: laradock-workspace-1):
+
+- Acesse o terminal dentro dele com:
+```bash
+docker exec -it laradock-workspace-1 /bin/sh
+```
+
+- Instale os pacotes necessários com:
+```bash
+composer install
+```
+
+- Crie as tabelas a partir das migrations:
+```bash
+php artisan migrate
+```
+
+- E por fim, semei as seeds por elas com:
+```bash
+php artisan db:seed
+```
+
+agora baixa sair usando `exit`
+
+8. Pronto, agora você já poderá acessar a rota de boas vindas em seu navegador:
 
 ```bash
-http://localhost/
+http://localhost:80/
 ```
 
 ## Documentação da API
