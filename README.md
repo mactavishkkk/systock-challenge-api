@@ -26,19 +26,21 @@ git clone git@github.com:mactavishkkk/systock-challenge-api.git
 cd systock-challenge-api
 ```
 
-3. Construa as imagens para os ambientes com docker, no terminal use:
+3. Você precisará do arquivo `.env` em seu diretório raiz, basta renomear o `.env.example` para o mesmo ou criar um novo:
+
+4. Construa as imagens para os ambientes com docker, no terminal use:
 
 ```bash
 docker compose build
 ```
 
-4. Agora basta subir elas com:
+5. Agora basta subir elas com:
 
 ```bash
 docker compose up -d
 ```
 
-5. Pronto, agora você já poderá acessar a rota de boas vindas em seu navegador:
+6. Pronto, agora você já poderá acessar a rota de boas vindas em seu navegador:
 
 ```bash
 https://localhost:8001/
@@ -58,10 +60,10 @@ hostname -I
 
 ele geralmente é o único ou o primeiro de uma lista, ele se parecerá com isto: `192.168.1.7 172.20.0.1 172.19.0`, nosso IP é o `192.168.1.7`.
 
-agora basta acessar o arquivo `ibbi-challenge-api.git/.env` e na string de `- DATABASE_URL=...@localhost` por `192.168.1.7` ou vice-versa, você também deverá fazer esta substituição nas strings do arquivo `app/database`. Pronto, volte ao passo **3** e continue novamente.
+agora basta acessar o arquivo `ibbi-challenge-api.git/.env` e na string de `DB_HOST=127.0.0.1` por `DB_HOST=192.168.1.7` ou vice-versa. Pronto, volte ao passo **4** e continue novamente.
 
 ---
 
 ## Documentação da API
 
-A documentação da API pode ser encontrada em `http://localhost:8001/docs`, onde você pode encontrar informações sobre os endpoints disponíveis, parâmetros de solicitação, respostas e exemplos de uso.
+A documentação da API pode ser encontrada em `https://documenter.getpostman.com/view/21973752/2sA3XY7J6G`, onde você pode encontrar informações sobre os endpoints disponíveis, parâmetros de solicitação, respostas e exemplos de uso.
