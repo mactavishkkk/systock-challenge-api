@@ -28,41 +28,17 @@ cd systock-challenge-api
 
 3. Você precisará do arquivo `.env` em seu diretório raiz, basta renomear o `.env.example` para o mesmo ou criar um novo:
 
-4. Construa as imagens para os ambientes com docker, no terminal use:
+4. Entre no diretório `laradock` e construa as imagens para os ambientes com docker, no terminal use:
 
 ```bash
-docker compose build
+docker compose up -d nginx postgres
 ```
 
-5. Agora basta subir elas com:
+5. Pronto, agora você já poderá acessar a rota de boas vindas em seu navegador:
 
 ```bash
-docker compose up -d
+http://localhost/
 ```
-
-6. Pronto, agora você já poderá acessar a rota de boas vindas em seu navegador:
-
-```bash
-https://localhost:8001/
-```
-
-## OBS:
-
-Por algum motivo, que confesso ainda não saber o porquê, alguns sistemas operacionais como distribuições linux não aceitam a palavra "localhost" para se referir ao IP local da máquina.
-
-então caso depois de executar a etapa **4** o aplicativo não subir, você precisará pegar o seu IP relativo que é diferente do **localhost**(127.0.0.1), é simples:
-
-1. Em seu terminal acesse-o com:
-
-```bash
-hostname -I
-```
-
-ele geralmente é o único ou o primeiro de uma lista, ele se parecerá com isto: `192.168.1.7 172.20.0.1 172.19.0`, nosso IP é o `192.168.1.7`.
-
-agora basta acessar o arquivo `ibbi-challenge-api.git/.env` e na string de `DB_HOST=127.0.0.1` por `DB_HOST=192.168.1.7` ou vice-versa. Pronto, volte ao passo **4** e continue novamente.
-
----
 
 ## Documentação da API
 
