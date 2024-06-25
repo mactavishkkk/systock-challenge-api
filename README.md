@@ -28,13 +28,15 @@ cd systock-challenge-api
 
 3. Você precisará do arquivo `.env` em seu diretório raiz, basta renomear o `.env.example` para o mesmo ou criar um novo:
 
-4. Entre no diretório `laradock` e construa as imagens para os ambientes com docker, no terminal use:
+4. Entre no diretório `laradock` e crie outro arquivo: `laradock/.env` a partir do arquivo `laradock/.env.example`
+
+5. Agora construa as imagens para os ambientes com docker, no terminal use:
 
 ```bash
 docker compose up -d nginx postgres
 ```
 
-5. Pronto, agora você já poderá acessar a rota de boas vindas em seu navegador:
+6. Pronto, agora você já poderá acessar a rota de boas vindas em seu navegador:
 
 ```bash
 http://localhost/
